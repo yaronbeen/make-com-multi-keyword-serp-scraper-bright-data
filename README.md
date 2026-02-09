@@ -69,6 +69,57 @@ The scenario uses a keyword array as input. For each keyword, it calls the Brigh
 - **Empty results**: When no organic results found, logs structured warning with query details.
 - **CAPTCHA/blocking**: Detects patterns like "captcha", "unusual traffic", "verify you are human", "access denied", "blocked" and logs them.
 
+## Make It Your Own
+
+This blueprint is a **flexible building block**, not a rigid template. Every part of it -- the prompts, the data structure, the output destination, and the logic -- is designed to be adjusted. Use it as-is for SERP scraping, or reshape it into something completely different.
+
+### Adjust the MCP Prompt
+
+The MCP prompt is where the magic happens. It tells Bright Data what to scrape and how to structure the response. You can rewrite it to extract completely different data:
+
+- **Extract different fields**: Add `snippet`, `date_published`, `image_url`, or any other data visible on the page
+- **Change the output format**: Request nested JSON, markdown tables, or a flat list
+- **Add instructions**: Tell the MCP to "ignore sponsored results", "only return results from .edu domains", or "translate titles to English"
+- **Scrape different pages**: The MCP isn't limited to search engines. Point it at any webpage and describe what you want extracted
+
+### Swap the Data Source
+
+The input doesn't have to be keywords for Google. You can replace the input module with:
+
+- **A webhook** that receives keywords from another system
+- **A Google Sheets feeder** that reads URLs or keywords from a spreadsheet
+- **An RSS feed** that triggers scraping when new content is published
+- **A scheduler** that runs different keywords on different days
+
+### Change the Output
+
+Google Sheets is just one option. Replace the output module with:
+
+- **Airtable** for a richer database with views and filters
+- **Notion** for team-accessible dashboards
+- **A webhook** to send data to your own API or database
+- **Slack/Email** for real-time notifications when specific results appear
+- **CSV/JSON file** via Google Drive for bulk data processing
+
+### Extend the Logic
+
+The router, aggregator, and error handling modules are all building blocks you can rearrange:
+
+- **Add filters**: Only save results from specific domains, or with certain keywords in the title
+- **Add scoring**: Use a second MCP call to evaluate or rank results before saving
+- **Chain scenarios**: Output from this scenario can trigger another Make.com scenario
+- **Add deduplication**: Compare new results against existing Sheets data to avoid duplicates
+- **Schedule runs**: Set the scenario to run hourly/daily for continuous monitoring
+
+### Example: Turn This Into a Brand Mention Tracker
+
+1. Change keywords to your brand name and competitors
+2. Adjust the MCP prompt to extract: `title`, `url`, `snippet`, `sentiment`
+3. Add a filter to only keep results mentioning your brand
+4. Replace Google Sheets with Slack to get instant alerts
+
+The blueprint handles the hard parts (MCP connection, retries, CAPTCHA detection, JSON parsing, error handling). You just change what goes in and what comes out.
+
 ## Documentation
 
 - [SETUP.md](SETUP.md) -- Step-by-step setup guide
