@@ -62,4 +62,4 @@ Then update the spreadsheet ID in the Google Sheets module.
 
 | Version | Date       | Changes         |
 | ------- | ---------- | --------------- |
-| 1.0.0   | 2025-02-09 | Initial release |
+| 1.0.0   | 2026-02-09 | Initial release |

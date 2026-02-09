@@ -37,16 +37,16 @@ The scenario uses a keyword array as input. For each keyword, it calls the Brigh
 
 ## Output Schema
 
-| Column     | Type     | Description                             |
-| ---------- | -------- | --------------------------------------- |
-| Query      | text     | The search keyword used                 |
-| Engine     | text     | Search engine domain (e.g., google.com) |
-| Rank       | number   | Position in organic results             |
-| Title      | text     | Result page title                       |
-| URL        | text     | Result page URL                         |
-| Domain     | text     | Result domain name                      |
-| Source     | text     | Data source identifier (brightdata_mcp) |
-| Scraped At | datetime | Timestamp of when data was collected    |
+| Column      | Type     | Description                             |
+| ----------- | -------- | --------------------------------------- |
+| Query       | text     | The search keyword used                 |
+| Engine      | text     | Search engine domain (e.g., google.com) |
+| Rank        | number   | Position in organic results             |
+| Title       | text     | Result page title                       |
+| URL         | text     | Result page URL                         |
+| Domain      | text     | Result domain name                      |
+| Source from | text     | Data source identifier (brightdata_mcp) |
+| Scraped At  | datetime | Timestamp of when data was collected    |
 
 ## Prerequisites
 

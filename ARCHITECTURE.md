@@ -67,7 +67,7 @@ Iterator  Results     Error Handler
 4. **Parsing**: Raw MCP string converted to structured JSON (query, results[{rank, title, url, domain}])
 5. **Routing**: 3-way decision based on result count and content patterns
 6. **Normalization**: Each result mapped to consistent schema with metadata (source, timestamp)
-7. **Storage**: Each row written to Google Sheets: Query(A), Engine(B), Rank(C), Title(D), URL(E), Domain(F), Source(G), Scraped_at(H)
+7. **Storage**: Each row written to Google Sheets: Query(A), Engine(B), Rank(C), Title(D), URL(E), Domain(F), Source from(G), Scraped_at(H)
 
 ## Error Handling Strategy
 

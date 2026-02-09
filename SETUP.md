@@ -51,6 +51,9 @@ Bright Data MCP is a free AI-powered web scraping tool that connects directly to
    - Import the provided `google-sheets-template.csv` file, **OR**
    - Create a blank sheet with headers: `Query`, `Engine`, `Rank`, `Title`, `URL`, `Domain`, `Source from`, `Scraped_at`
 5. Update the **Spreadsheet ID** in the module to point to your new sheet
+6. Ensure the sheet name is **Sheet1** (or update the module to match your sheet name)
+
+> **How to find your Spreadsheet ID**: Open your Google Sheet in a browser. The URL looks like `https://docs.google.com/spreadsheets/d/YOUR_SPREADSHEET_ID/edit`. Copy the long string between `/d/` and `/edit`.
 
 ## 4. Configure Input Variables
 
@@ -78,5 +81,6 @@ Click the first module (**Input Parameters**) and update:
 | Empty results              | Try different keywords or check if the search engine domain is correct                   |
 | CAPTCHA errors logged      | This is normal for some queries. Bright Data handles most CAPTCHAs. Retry usually works. |
 | Invalid JSON errors        | The MCP response format may vary. Check the raw response in the error handler output.    |
+| Can't find error details   | Click the error handler module (pink) after a failed run to see captured error variables |
 | Google Sheets not updating | Verify the spreadsheet ID and sheet name match your configuration                        |
 | Rate limiting              | Add longer delays between keywords or reduce the keyword count per run                   |
